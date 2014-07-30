@@ -8,13 +8,13 @@
 	
 	<title>Cyklomapa Plzně a okolí</title>
 
-	<link rel="stylesheet" href="./css/style.css" />
-	<link rel="stylesheet" href="./leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/leaflet-0.7.3/leaflet.css" />
 </head>
 <body>
 	<div id="map"></div>
 
-	<script src="./leaflet-0.7.3/leaflet.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/leaflet-0.7.3/leaflet.js"></script>
 	<script>
 
 		var map = L.map('map').setView([49.74403, 13.36958], 13);
