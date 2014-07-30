@@ -1,12 +1,48 @@
-body, html {
+body, html, p, h1 {
 	margin: 0;
 	padding: 0;
+	border: 0;
 }
 
 body, html {
+	background-color: #F7F7F7;
+	color: black;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 13px;
 	height: 100%;
+}
+
+h1 {
+	font-size: 30px;
+	padding: 5px 0 5px 0;
+	color: #0078A8;	
+}
+
+p {
+	margin: 8px 0 8px 0;
+}
+
+a {
+	color: #31497A;
 }
 
 #map {
 	height: 100%;
+}
+
+#bodyContent {
+	height: auto;
+}
+
+#content {
+	max-width: 770px;
+	margin: 5px auto 5px auto;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #999999;
+}
+
+#menu {
+	float: right;
+	margin: 8px;
 }

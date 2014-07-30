@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-	<meta charset="utf-8" />
-	<meta name="description" content="Komunitní cyklomapa Plzně a okolí" />
-	<meta name="keywords" content="cyklo,kolo,mapa,cyklistika" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<title>Cyklomapa Plzně a okolí</title>
+<?php get_header(); ?>
 
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/leaflet-0.7.3/leaflet.css" />
-</head>
+<?php if (is_home()) { ?>
 <body>
 	<div id="map"></div>
 
@@ -26,5 +16,27 @@
 				'Dlaždice © <a href="hhttp://mapa.prahounakole.cz/">Prahou na kole</a>'
 		}).addTo(map);
 	</script>
-</body>
-</html>
+	
+<?php } else { ?>
+
+<body id="bodyContent">	
+<div id="content">
+
+<div id="menu">
+	<strong><a href="<?php echo home_url(); ?>">Zpět na mapu</a></strong>
+</div>
+
+<?php
+	while ( have_posts() ) : the_post();
+		the_title('<h1>', '</h1>');	
+		the_content();
+	endwhile;
+	
+	edit_post_link('Upravit článek', '<p id="editContent">[<strong>', '</strong>]</p>');
+?>
+
+</div>	
+
+<?php } ?>
+
+<?php get_footer(); ?>
