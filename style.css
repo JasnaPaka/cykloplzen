@@ -1,21 +1,26 @@
-body, html, p, h1 {
+body, html, p, h1, h2 {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
 
 body, html {
-	background-color: #F7F7F7;
+	background-color: white;	
 	color: black;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 13px;
 	height: 100%;
 }
 
 h1 {
 	font-size: 30px;
-	padding: 5px 0 5px 0;
-	color: #0078A8;	
+	padding: 10px 0 10px 0;
+	color: #0078A8;
+}
+
+h2 {
+	font-size: 20px;
+	margin: 10px 0 10px 0;
 }
 
 p {
@@ -28,10 +33,13 @@ a {
 
 #map {
 	height: 100%;
+	position: relative;
+	border-right: 1px solid #999999;
 }
 
 #bodyContent {
 	height: auto;
+	background-color: #F7F7F7;
 }
 
 #content {
@@ -45,4 +53,43 @@ a {
 #menu {
 	float: right;
 	margin: 8px;
+}
+
+#legenda {
+	width: 250px;
+	float: right;
+	background-color: white;
+	padding: 15px;
+}
+
+#legenda-obsah {
+	position: absolute;
+	overflow-y: auto;
+	top: 160px;
+	bottom: 0px;
+	margin-right: 15px;
+}
+
+#logo {
+	margin: 0 0 0 45px;
+}
+
+.podpora {
+	margin-top: 10px;
+}
+
+#button-hide {
+	position: absolute;
+	top: 30px;
+	height: 50px;
+	font-weight: bold;
+	z-index: 2;
+	right: 280px;
+	border: none;
+	background-color: white;
+	border-radius: 5px 0 0 5px;
+}
+
+#button-hide:hover {
+	background-color: #339900;
 }
