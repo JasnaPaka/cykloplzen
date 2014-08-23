@@ -4,7 +4,7 @@
 <body>
 	<script type="text/javascript">
 		function toggleSidebar() {
-			var sidebar = document.getElementById("legenda");
+			var sidebar = document.getElementById("sidebar");
 			var buttonHide = document.getElementById("button-hide");
 			
 			var style = window.getComputedStyle(sidebar);
@@ -24,16 +24,39 @@
 			
 			L.Util.requestAnimFrame(map.invalidateSize, map, false, map._container);
 		}
+		
+		function toggleLegenda() {
+			var legenda = document.getElementById("sidebar-legenda");
+			var obsah = document.getElementById("sidebar-info");
+			var style = window.getComputedStyle(legenda);
+			
+			var infoButton = document.getElementById("menu-o-mape");
+			var legendaButton = document.getElementById("menu-legenda");
+			
+			if (style.getPropertyValue("display") == "none") {
+				legenda.style.display = "block";
+				obsah.style.display = "none";
+				
+				infoButton.style.display = "block";
+				legendaButton.style.display = "none";
+			} else {
+				legenda.style.display = "none";
+				obsah.style.display = "block";
+				
+				infoButton.style.display = "none";
+				legendaButton.style.display = "block";
+			}
+		}
 	</script>
 
 	<button id="button-hide" title="Skryje postranní lištu" onclick="toggleSidebar()">&gt;</button>
 
-	<div id="legenda">
+	<div id="sidebar">
 		<img src="<?php bloginfo('template_url'); ?>/images/bicycle-icon.png" alt="Ikona kola" id="logo" />
 	
 		<h1>Cyklomapa Plzně</h1>
 	
-		<div id="legenda-obsah">
+		<div id="sidebar-obsah">
 			<p>Komunitní cyklomapa Plzně a okolí, která vzniká v rámci podnětu 
 				programu <a href="http://www.verejnyprostorvplzni.cz/pestuj-prostor">Pěstuj prostor</a> pod
 				<a href="http://plzen2015.cz/">Plzeň 2015</a>.</p>
@@ -42,15 +65,96 @@
 			který vychází z <a href="http://mtbmap.cz/">MTBMap</a> a pro potřeby cyklistiky jej upravilo
 			<a href="http://prahounakole.cz/">Prahou na kole</a>.</p>
 			
-			<h2>Jak se zapojit</h2>
+			<p id="sidebar-menu">
+				<a href="#" style="display:none" id="menu-o-mape" onclick="toggleLegenda()">O mapě</a> 
+				<a href="#" id="menu-legenda" onclick="toggleLegenda()">Legenda mapy</a>
+			</p>
 			
-			<p>Mapa vzniká díky práci dobrovolníků, mezi které se můžete zařadit i vy. Našli jste chybu?
-			Chcete mapu něčím vylepšit? <a href="mailto:jasnapaka@jasnapaka.com">Napište nám</a> nebo
-			si přečtěte, <a href="./mapovani/">jak pomoci s vylepšování mapy</a>.</p>
+			<div id="sidebar-info">
+				<h2>Jak se zapojit</h2>
+				
+				<p>Mapa vzniká díky práci dobrovolníků, mezi které se můžete zařadit i vy. Našli jste chybu?
+				Chcete mapu něčím vylepšit? <a href="./o-nas/">Napište nám</a> nebo
+				si přečtěte, <a href="./mapovani/">jak pomoci s vylepšování mapy</a>.</p>
+				
+				<h2>Podpora</h2>
+				
+				<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Prahou na kole a <a href="./podpora/">další partneři</a>.</p>
+				
+				<h2>Kontakt</h2>
+				
+				<p>Pokud se vám projekt líbí, chcete k němu něco sdělit nebo jej podpořit, <a href="./o-nas/">napište nám</a>.</p>
+			</div>
 			
-			<h2>Podpora</h2>
-			
-			<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Prahou na kole a <a href="./partneri/">další partneři</a>.</p>
+			<div id="sidebar-legenda" style="display:none">
+				<h2>Legenda</h2>
+				
+				<table>
+					<tr>
+						<td width="53"><img src="<?php bloginfo('template_url'); ?>/images/legenda/cyklotrasa.png" alt="Značená cyklotrasa" /></td>
+						<td>Značená cyklotrasa</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/pesi-zona-cyklo.png" alt="Cyklostezka na chodníku" /></td>
+						<td>Cyklostezka na chodníku</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/silny-provoz.png" alt="Silný provoz" /></td>
+						<td>Silný provoz</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/slaby-provoz.png" alt="Slabý provoz" /></td>
+						<td>Slabý provoz</td>
+					</tr>					
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/zadny-provoz.png" alt="Žádný provoz" /></td>
+						<td>Žádný provoz</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/horsi-povrch.png" alt="Horší povrch" /></td>
+						<td>Horší povrch</td>
+					</tr>					
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/spatny-povrch.png" alt="Špatný povrch" /></td>
+						<td>Špatný povrch</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/cykloobousmerka.png" alt="Zpřístupněná jednosměrka" /></td>
+						<td>Zpřístupněná jednosměrka</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/dlazba.png" alt="Dlažba, kočičí hlavy" /></td>
+						<td>Dlažba, kočičí hlavy</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/prejezd.png" alt="Přejezd pro cyklisty" /></td>
+						<td>Přejezd pro cyklisty</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/retarder.png" alt="Zpomalovací prvek" /></td>
+						<td>Zpomalovací prvek</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/zakaz-cyklo.png" alt="Zákaz vjezdu cyklistům" /></td>
+						<td>Zákaz vjezdu cyklistům</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/pesi-zona.png" alt="Pěší zóna bez cyklistů" /></td>
+						<td>Pěší zóna bez cyklistů</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/chodnik-neznaceny.png" alt="Chodník, cesta pro pěší" /></td>
+						<td>Chodník, cesta pro pěší</td>
+					</tr>
+					
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/dopravni-obsluha.png" alt="Vjezd jen pro dopravní obsluhu" /></td>
+						<td>Vjezd jen pro dopravní obsluhu</td>
+					</tr>
+					
+					
+				</table>
+			</div>
 		</div>
 	</div>
 
@@ -75,12 +179,15 @@
 <div id="content">
 
 <div id="menu">
-	<strong><a href="<?php echo home_url(); ?>">Zpět na mapu</a></strong>
+	<a href="<?php echo home_url(); ?>/" title="Zobrazení mapy" class="menu-item">Mapa</a>
+	<a href="<?php echo home_url(); ?>/mapovani/" title="Jak pomoci s vylepšováním mapy" class="menu-item">Vylepšování mapy</a>
+	<a href="<?php echo home_url(); ?>/podpora/" title="Kdo podpořil mapu" class="menu-item">Kdo podpořil</a>
+	<a href="<?php echo home_url(); ?>/o-nas/" title="O týmu stojící z mapou" class="menu-item">O nás</a>
 </div>
 
 <?php
 	while ( have_posts() ) : the_post();
-		the_title('<h1>', '</h1>');	
+		the_title('<h1 id="nadpis">', '</h1>');	
 		the_content();
 	endwhile;
 	
