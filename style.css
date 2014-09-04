@@ -7,13 +7,13 @@ body, html, p, h1, h2 {
 body, html {
 	background-color: white;	
 	color: black;
-	font-family: "Open Sans", sans-serif;
+	font-family: Verdana,"Geneva CE",lucida,sans-serif;
 	font-size: 13px;
 	height: 100%;
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 26px;
 	padding: 10px 0 10px 0;
 	color: #0078A8;
 }
@@ -24,7 +24,7 @@ h2 {
 }
 
 p {
-	margin: 8px 0 8px 0;
+	margin: 10px 0 10px 0;
 }
 
 a {
@@ -107,11 +107,14 @@ a {
 	text-decoration: underline;
 }
 
+#nadpis {
+	margin-top: 20px;
+}
 
 .menu-item {
 	margin: 0 10px 0 10px;
 }
 
-#nadpis {
-	/*padding: 0px;*/
+.logo-propagace {
+	margin-right: 10px;
 }

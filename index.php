@@ -74,16 +74,20 @@
 				<h2>Jak se zapojit</h2>
 				
 				<p>Mapa vzniká díky práci dobrovolníků, mezi které se můžete zařadit i vy. Našli jste chybu?
-				Chcete mapu něčím vylepšit? <a href="./o-nas/">Napište nám</a> nebo
+				Chcete mapu něčím vylepšit? <a href="./o-mape/">Napište nám</a> nebo
 				si přečtěte, <a href="./mapovani/">jak pomoci s vylepšování mapy</a>.</p>
 				
 				<h2>Podpora</h2>
 				
-				<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Prahou na kole a <a href="./podpora/">další partneři</a>.</p>
+				<p><a href="http://plzen2015.cz/">
+					<img src="<?php bloginfo('template_url'); ?>/images/plzen2015.png" alt="Logo Plzeň 2015" id="logo" />
+				</a></p>
+				
+				<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Prahou na kole a <a href="./podpora/">dalším partnerům</a>.</p>			
 				
 				<h2>Kontakt</h2>
 				
-				<p>Pokud se vám projekt líbí, chcete k němu něco sdělit nebo jej podpořit, <a href="./o-nas/">napište nám</a>.</p>
+				<p>Pokud se vám projekt líbí, chcete k němu něco sdělit nebo jej podpořit, <a href="./o-mape/">napište nám</a>.</p>
 			</div>
 			
 			<div id="sidebar-legenda" style="display:none">
@@ -95,8 +99,8 @@
 						<td>Značená cyklotrasa</td>
 					</tr>
 					<tr>
-						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/pesi-zona-cyklo.png" alt="Cyklostezka na chodníku" /></td>
-						<td>Cyklostezka na chodníku</td>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/chodnik.png" alt="Chodník s cyklopruhem" /></td>
+						<td>Chodník s cyklopruhem</td>
 					</tr>
 					<tr>
 						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/silny-provoz.png" alt="Silný provoz" /></td>
@@ -143,6 +147,10 @@
 						<td>Pěší zóna bez cyklistů</td>
 					</tr>
 					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/pesi-zona-cyklo.png" alt="Zóna pro pěší a cyklisty" /></td>
+						<td>Zóna pro pěší a cyklisty</td>
+					</tr>
+					<tr>
 						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/chodnik-neznaceny.png" alt="Chodník, cesta pro pěší" /></td>
 						<td>Chodník, cesta pro pěší</td>
 					</tr>
@@ -182,7 +190,7 @@
 	<a href="<?php echo home_url(); ?>/" title="Zobrazení mapy" class="menu-item">Mapa</a>
 	<a href="<?php echo home_url(); ?>/mapovani/" title="Jak pomoci s vylepšováním mapy" class="menu-item">Vylepšování mapy</a>
 	<a href="<?php echo home_url(); ?>/podpora/" title="Kdo podpořil mapu" class="menu-item">Kdo podpořil</a>
-	<a href="<?php echo home_url(); ?>/o-nas/" title="O týmu stojící z mapou" class="menu-item">O nás</a>
+	<a href="<?php echo home_url(); ?>/o-mape/" title="O mapě" class="menu-item">O mapě</a>
 </div>
 
 <?php

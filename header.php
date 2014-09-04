@@ -14,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/print.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/leaflet-0.7.3/leaflet.css" />
 	
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css' />
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 </head>
 <body>
