@@ -95,6 +95,11 @@
 				
 				<table>
 					<tr>
+						<td width="53"><img src="<?php bloginfo('template_url'); ?>/images/legenda/cyklostojan.png" alt="Cyklostojan" /></td>
+						<td>Cyklostojan</td>
+					</tr>
+
+					<tr>
 						<td width="53"><img src="<?php bloginfo('template_url'); ?>/images/legenda/cyklotrasa.png" alt="Značená cyklotrasa" /></td>
 						<td>Značená cyklotrasa</td>
 					</tr>
@@ -153,11 +158,23 @@
 					<tr>
 						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/chodnik-neznaceny.png" alt="Chodník, cesta pro pěší" /></td>
 						<td>Chodník, cesta pro pěší</td>
-					</tr>
-					
+					</tr>					
 					<tr>
 						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/dopravni-obsluha.png" alt="Vjezd jen pro dopravní obsluhu" /></td>
 						<td>Vjezd jen pro dopravní obsluhu</td>
+					</tr>
+					
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/stoupani.png" alt="Stoupání" /></td>
+						<td>Stoupání</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/strme-stoupani.png" alt="Strmé stoupání" /></td>
+						<td>Strmé stoupání</td>
+					</tr>
+					<tr>
+						<td><img src="<?php bloginfo('template_url'); ?>/images/legenda/piktokoridor.png" alt="Piktokoridor" /></td>
+						<td>Piktokoridor</td>
 					</tr>
 					
 					
@@ -179,6 +196,8 @@
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 				'Dlaždice © <a href="hhttp://mapa.prahounakole.cz/">Prahou na kole</a>'
 		}).addTo(map);
+		
+		L.control.scale({imperial: false, maxWidth: 250}).addTo(map);
 	</script>
 	
 <?php } else { ?>
