@@ -75,7 +75,7 @@
 				
 				<p>Mapa vzniká díky práci dobrovolníků, mezi které se můžete zařadit i vy. Našli jste chybu?
 				Chcete mapu něčím vylepšit? <a href="./o-mape/">Napište nám</a> nebo
-				si přečtěte, <a href="./mapovani/">jak pomoci s vylepšování mapy</a>.</p>
+				si přečtěte, <a href="./mapovani/">jak pomoci s vylepšováním mapy</a>.</p>
 				
 				<h2>Podpora</h2>
 				
