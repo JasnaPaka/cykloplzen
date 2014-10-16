@@ -52,7 +52,7 @@
 	<button id="button-hide" title="Skryje postranní lištu" onclick="toggleSidebar()">&gt;</button>
 
 	<div id="sidebar">
-		<img src="<?php bloginfo('template_url'); ?>/images/bicycle-icon.png" alt="Ikona kola" id="logo" />
+		<img src="<?php bloginfo('template_url'); ?>/images/bicycle-icon.png" alt="Ikona kola" class="logo" />
 	
 		<h1>Cyklomapa Plzně</h1>
 	
@@ -80,10 +80,14 @@
 				<h2>Podpora</h2>
 				
 				<p><a href="http://plzen2015.cz/">
-					<img src="<?php bloginfo('template_url'); ?>/images/plzen2015.png" alt="Logo Plzeň 2015" id="logo" />
+					<img src="<?php bloginfo('template_url'); ?>/images/plzen2015.png" alt="Logo Plzeň 2015" class="logo" />
 				</a></p>
 				
-				<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Prahou na kole a <a href="./podpora/">dalším partnerům</a>.</p>			
+				<p><a href="http://www.plzennakole.cz/">
+					<img src="<?php bloginfo('template_url'); ?>/images/plzen-na-kole.png" alt="Logo Plzeň na kole" class="logo" />
+				</a></p>
+				
+				<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Plzeň na kole, Prahou na kole a <a href="./podpora/">dalším podporovatelům</a>.</p>			
 				
 				<h2>Kontakt</h2>
 				

@@ -39,7 +39,6 @@ a {
 
 #bodyContent {
 	height: auto;
-	/*background-color: #F7F7F7;*/
 }
 
 #content {
@@ -47,7 +46,6 @@ a {
 	margin: 5px auto 5px auto;
 	padding: 10px;
 	background-color: white;
-	/*border: 1px solid #999999;*/
 }
 
 #sidebar {
@@ -65,12 +63,16 @@ a {
 	margin-right: 15px;
 }
 
+#navigace {
+	border-bottom: 1px solid #BBBBBB;
+}
+
 #sidebar-menu {
 	padding: 5px;
 	border: 1px solid #BBBBBB;
 }
 
-#logo {
+.logo {
 	margin: 0 0 0 45px;
 }
 
