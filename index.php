@@ -83,6 +83,10 @@
 					<img src="<?php bloginfo('template_url'); ?>/images/plzen2015.png" alt="Logo Plzeň 2015" class="logo" />
 				</a></p>
 				
+				<p><a href="http://verejnyprostorvplzni.cz/pestuj-prostor">
+					<img src="<?php bloginfo('template_url'); ?>/images/pestuj-prostor.png" alt="Logo Pěstuj prostor" class="logo" />
+				</a></p>
+				
 				<p><a href="http://www.plzennakole.cz/">
 					<img src="<?php bloginfo('template_url'); ?>/images/plzen-na-kole.png" alt="Logo Plzeň na kole" class="logo" />
 				</a></p>
