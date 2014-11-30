@@ -208,7 +208,7 @@
 			maxZoom: 18,
 			attribution: 'Data &copy; Přispěvatelé <a href="http://openstreetmap.org">OpenStreetMap</a>, ' +
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Dlaždice © <a href="hhttp://mapa.prahounakole.cz/">Prahou na kole</a>'
+				'Dlaždice © <a href="http://mapa.prahounakole.cz/">Prahou na kole</a>'
 		});
 		map.addLayer(pnkLayer);
 		
@@ -216,7 +216,7 @@
 			maxZoom: 16,
 			attribution: 'Data &copy; Přispěvatelé <a href="http://openstreetmap.org">OpenStreetMap</a>, ' +
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Dlaždice © <a href="hhttp://mapa.prahounakole.cz/">Prahou na kole</a>'
+				'Dlaždice © <a href="http://opencyclemap.org/">OpenCycleMap.org</a>'
 		});
 		
 		var gglLayer = new L.Google();
