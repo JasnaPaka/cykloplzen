@@ -10,11 +10,11 @@
 	
 	<title><?php wp_title("&raquo;", true, "right"); ?> Cyklomapa Plzně a okolí - přehled cyklotras a cyklostezek</title>
 	
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" media="(max-width: 500px)" href="<?php bloginfo('template_url'); ?>/style-500.css" />
 	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/print.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 	
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 </head>

@@ -82,7 +82,7 @@ a {
 
 #button-hide {
 	position: absolute;
-	top: 30px;
+	top: 60px;
 	height: 50px;
 	font-weight: bold;
 	z-index: 2;
@@ -119,4 +119,8 @@ a {
 
 .logo-propagace {
 	margin-right: 10px;
+}
+
+.leaflet-container .leaflet-control-attribution{
+	margin: 0 0 10px 5px;
 }

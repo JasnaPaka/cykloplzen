@@ -194,18 +194,41 @@
 	<div id="map"></div>
 
 	<script src="<?php bloginfo('template_url'); ?>/leaflet-0.7.3/leaflet.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/leaflet-plugins-1.2.1/control/Permalink.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/leaflet-plugins-1.2.1/control/Permalink.Marker.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/leaflet-plugins-1.2.1/control/Permalink.Layer.js"></script>
+	<script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
+	<script src="<?php bloginfo('template_url'); ?>/leaflet-plugins-1.2.1/layer/tile/Google.js"></script>	
+	
 	<script>
 
 		var map = L.map('map').setView([49.74403, 13.36958], 13);
 
-		L.tileLayer(' http://tiles.prahounakole.cz/{z}/{x}/{y}.png', {
+		var pnkLayer = L.tileLayer(' http://tiles.prahounakole.cz/{z}/{x}/{y}.png', {
 			maxZoom: 18,
 			attribution: 'Data &copy; Přispěvatelé <a href="http://openstreetmap.org">OpenStreetMap</a>, ' +
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 				'Dlaždice © <a href="hhttp://mapa.prahounakole.cz/">Prahou na kole</a>'
-		}).addTo(map);
+		});
+		map.addLayer(pnkLayer);
+		
+		var openCycleMapLayer = L.tileLayer(' http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {
+			maxZoom: 16,
+			attribution: 'Data &copy; Přispěvatelé <a href="http://openstreetmap.org">OpenStreetMap</a>, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Dlaždice © <a href="hhttp://mapa.prahounakole.cz/">Prahou na kole</a>'
+		});
+		
+		var gglLayer = new L.Google();
+		
+		
+		http://[abc].tile.thunderforest.com/cycle/{z}/{x}/{y}.png
 		
 		L.control.scale({imperial: false, maxWidth: 250}).addTo(map);
+		
+		var layers = new L.Control.Layers({'Cyklomapa':pnkLayer, "OpenCycleMap":openCycleMapLayer, "Letecká Google": gglLayer});
+		map.addControl(layers);
+		map.addControl(new L.Control.Permalink({text: 'Trvalý odkaz', layers: layers}));
 	</script>
 	
 <?php } else { ?>
