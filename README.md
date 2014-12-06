@@ -14,6 +14,7 @@ V současné době je projekt Cyklomapy zejména o vylepšování mapových podk
 **Aktuální plány**
 * přidání bodů zájmu (POI) - evidence problematických míst, tipy apod.
 * vícejazyčná verze
+* anglická verze informačního letáku
 
 
 Chyby a nápady
