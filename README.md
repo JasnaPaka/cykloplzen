@@ -11,3 +11,11 @@ Jak se zapojit
 ----------------
 V současné době je projekt Cyklomapy zejména o vylepšování mapových podkladů. Informace, jak vylepšovat mapové podklady projektu OpenStreetMap, naleznete na [wiki stránce projektu](http://wiki.openstreetmap.org/wiki/Main_Page). Podívejte se též na [přehledovou stránku](http://cyklomapa.plzne.cz/mapovani/), která vám řekne, co je pro cyklomapu nejvíce důležité.
 
+**Aktuální plány**
+* přidání bodů zájmu (POI) - evidence problematických míst, tipy apod.
+* vícejazyčná verze
+
+
+Chyby a nápady
+---------------
+Našli jste chybu v mapových podkladech a nevíte, jak ji opravit? [Napište mi](mailto:jasnapaka@jasnapaka.com). Máte nápad, jak mapu vylepšit? [Zadejte podnět](https://github.com/JasnaPaka/cykloplzen/issues) zde na GitHubu nebo mi ho [pošlete e-mailem](mailto:jasnapaka@jasnapaka.com).
