@@ -6,3 +6,8 @@ Cyklomapa Plzně je komunitní cyklomapa Plzně a okolí, která běží na adre
 Technické pozadí
 -----------------
 Mapa staví na otevřených kartografických datech projektu [OpenStreetMap](http://www.openstreetmap.org/), které do mapy vhodnou pro cyklistiky připravilo Prahou na kole. Vzhled mapy vychází z [MTBMap](http://mtbmap.cz/).
+
+Jak se zapojit
+----------------
+V současné době je projekt Cyklomapy zejména o vylepšování mapových podkladů. Informace, jak vylepšovat mapové podklady projektu OpenStreetMap, naleznete na [wiki stránce projektu](http://wiki.openstreetmap.org/wiki/Main_Page). Podívejte se též na [přehledovou stránku](http://cyklomapa.plzne.cz/mapovani/), která vám řekne, co je pro cyklomapu nejvíce důležité.
+
