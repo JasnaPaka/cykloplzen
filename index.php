@@ -16,13 +16,13 @@
 	<link rel="stylesheet" type="text/css" href="leaflet-0.7.3/leaflet.css" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	
-	<script src="js/functions.js"></script>
-	
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
 
-<button id="button-hide" title="Skryje postranní lištu" onclick="toggleSidebar()">&gt;</button>
+<script src="js/map.js"></script>
+
+<button id="button-hide" title="Skryje postranní lištu" onclick="cyclemap.toggleSidebar()">&gt;</button>
 
 <div id="sidebar">
 	<img src="images/bicycle-icon.png" alt="Ikona kola" class="logo" />
@@ -38,8 +38,8 @@
 		můžete zapojit i vy</a>!</p>
 		
 		<p id="sidebar-menu">
-			<a href="#" style="display:none" id="menu-o-mape" onclick="toggleLegenda()">O mapě</a> 
-			<a href="#" id="menu-legenda" onclick="toggleLegenda()">Legenda mapy</a>
+			<a href="#" style="display:none" id="menu-o-mape" onclick="cyclemap.toggleLegenda()">O mapě</a> 
+			<a href="#" id="menu-legenda" onclick="cyclemap.toggleLegenda()">Legenda mapy</a>
 		</p>
 		
 		<div id="sidebar-info">
@@ -164,36 +164,9 @@
 <script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
 <script src="leaflet-plugins-1.2.1/layer/tile/Google.js"></script>	
 
+
 <script>
-
-	var map = L.map('map').setView([49.74403, 13.36958], 13);
-
-	var pnkLayer = L.tileLayer(' http://tiles.prahounakole.cz/{z}/{x}/{y}.png', {
-		maxZoom: 18,
-		attribution: 'Data &copy; Přispěvatelé <a href="http://openstreetmap.org">OpenStreetMap</a>, ' +
-			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Dlaždice © <a href="http://mapa.prahounakole.cz/">Prahou na kole</a>'
-	});
-	map.addLayer(pnkLayer);
-	
-	var openCycleMapLayer = L.tileLayer(' http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {
-		maxZoom: 16,
-		attribution: 'Data &copy; Přispěvatelé <a href="http://openstreetmap.org">OpenStreetMap</a>, ' +
-			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Dlaždice © <a href="http://opencyclemap.org/">OpenCycleMap.org</a>'
-	});
-	
-	var gglLayer = new L.Google();
-	
-	L.control.scale({imperial: false, maxWidth: 250}).addTo(map);
-	
-	var layers = new L.Control.Layers({'Cyklomapa':pnkLayer, "OpenCycleMap":openCycleMapLayer, "Letecká Google": gglLayer});
-	map.addControl(layers);
-	map.addControl(new L.Control.Permalink({text: 'Trvalý odkaz', layers: layers}));
-	
-	// POIs
-	
-	
+	cyclemap.init();
 </script>	
 
 <script>
