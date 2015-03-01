@@ -1,3 +1,8 @@
+<?php
+	include_once "poi.php";
+	$poiReader = new POIReader();
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -16,9 +21,15 @@
 	<link rel="stylesheet" type="text/css" href="leaflet-0.7.3/leaflet.css" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	
+	<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+	
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
+
+<script type="text/javascript">
+	var POIs = <?php echo $poiReader->getPOIContent(); ?>;
+</script>
 
 <script src="js/map.js"></script>
 
@@ -36,6 +47,18 @@
 		
 		<p>Jedná se o komunitní projekt, do kterého se <a href="http://cyklomapainfo.plzne.cz/jak-se-zapojit/">
 		můžete zapojit i vy</a>!</p>
+		
+		<fieldset id="field-poi">
+<?php
+	$i = 0;
+	foreach($poiReader->getCategories() as $category) {
+		$i++;
+		
+		printf('<input type="checkbox" name="category" id="category%d" data-category="%s" checked="checked" onclick="cyclemap.categoryClick()" /><label class="field-category" for="category%d">%s</label><br />', 
+			$i, $category, $i, $category);	
+	}
+?>	
+		</fieldset>
 		
 		<p id="sidebar-menu">
 			<a href="#" style="display:none" id="menu-o-mape" onclick="cyclemap.toggleLegenda()">O mapě</a> 
@@ -76,10 +99,11 @@
 <script src="leaflet-plugins-1.2.1/control/Permalink.Layer.js"></script>
 <script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
 <script src="leaflet-plugins-1.2.1/layer/tile/Google.js"></script>	
+<script src="leaflet-plugins-1.2.1/layer/vector/KML.js"></script>
 
 
-<script>
-	cyclemap.init();
+<script type="text/javascript">
+	cyclemap.init(POIs);
 </script>	
 
 <script>
@@ -92,6 +116,17 @@
   ga('send', 'pageview');
 
 </script>
+
+<?php
+	// Má se sidebar odstranit?
+	if (isset($_GET["closesidebar"])) {
+?>
+	<script type="text/javascript">
+		cyclemap.toggleSidebar();
+	</script>
+<?php
+	} 
+?>
 
 </body>
 </html>

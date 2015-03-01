@@ -124,3 +124,11 @@ a {
 .leaflet-container .leaflet-control-attribution{
 	margin: 0 0 10px 5px;
 }
+
+#field-poi {
+	margin: 15px 0 15px 0;
+}
+
+.field-category {
+	margin-left: 10px;
+}
