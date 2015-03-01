@@ -52,7 +52,7 @@
 				<img src="images/plzen2015.png" alt="Logo Plzeň 2015" class="logo" />
 			</a></p>
 			
-			<p><a href="http://verejnyprostorvplzni.cz/pestuj-prostor">
+			<p><a href="http://pestujprostor.plzne.cz/">
 				<img src="images/pestuj-prostor.png" alt="Logo Pěstuj prostor" class="logo" />
 			</a></p>
 			
