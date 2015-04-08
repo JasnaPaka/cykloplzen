@@ -59,21 +59,22 @@ var cyclemap = {
 		this.map.on('popupopen', function(e) {
   			var marker = e.popup._source;
   			
-  			url = "http://plzen.dopracenakole.net/popup/" + marker.popupId + "/";
+  			url = "http://plzen.dopracenakole.net/popup/" + marker.popupId + "/";			
   			
-		/*	$.get(url, function() {
-				  alert( "success" );
+			$.get(url, function(data) {
+				  console.log( "success" );
+				  console.log(data);
 				})
 				  .done(function() {
-				    alert( "second success" );
+				    console.log( "second success" );
 				  })
-				  .fail(function(data) {
-				  	console.log(data);
-				    alert( "error" );
+				  .fail(function() {
+				    console.log( "error" );
 				  })
 				  .always(function() {
-				    alert( "finished" );
-				  });*/
+				    console.log( "finished" );
+				  });
+  
 		});
 		
 	},
