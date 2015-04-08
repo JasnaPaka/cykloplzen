@@ -69,7 +69,8 @@
 			
 			<h2>Podpora</h2>
 			
-			<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Plzeň na kole, Prahou na kole a <a href="./podpora/">dalším podporovatelům</a>.</p>
+			<p>Děkujeme všem, kteří nás podporují. Jmenovitě pak Plzeň 2015, Plzeň na kole, Prahou na kole a 
+				<a href="http://cyklomapainfo.plzne.cz/o-projektu/">dalším podporovatelům</a>.</p>
 			
 			<p><br /><a href="http://plzen2015.cz/">
 				<img src="images/plzen2015.png" alt="Logo Plzeň 2015" class="logo" />
