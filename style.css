@@ -132,3 +132,7 @@ a {
 .field-category {
 	margin-left: 10px;
 }
+
+.addinfo {
+	display:none;
+}

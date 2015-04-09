@@ -38,7 +38,7 @@ var cyclemap = {
 			var icon = L.icon({iconUrl: POIs[i][3], iconSize: [20, 20]});
 			
 			var marker = L.marker([POIs[i][4], POIs[i][5]], {icon: icon});
-			marker.addTo(this.map).bindPopup("<strong>" + POIs[i][1] + "</strong>");
+			marker.addTo(this.map);
 			marker.zoom = POIs[i][2];
 			marker.category = POIs[i][0];
 			marker.popupId = POIs[i][6];
@@ -48,33 +48,34 @@ var cyclemap = {
 			} 
 			
 			this.markers.push(marker);
+			
+			marker.on('click', function(e) {
+				url = "http://plzen.dopracenakole.net/popup/" + this.popupId + "/";			
+  			
+				var request = $.ajax({
+				  url: url,
+				  type: "GET",
+				  dataType: 'json'
+				});
+				
+				request.done(function(msg) {
+				
+				});
+				
+				request.fail(function(jqXHR, textStatus) {
+					var data = jqXHR.responseText;
+					data = data.replace("href=\"/", "href=\"http://plzen.dopracenakole.net/");	 
+					data = data.replace("src=\"/", "src=\"http://plzen.dopracenakole.net/");
+			
+					e.target.bindPopup(data);
+					e.target.openPopup();
+				});
+			}); 
 		}
 		
 		// zoom change
 		this.map.on('zoomend', function(event) {
 			cyclemap.changePOIs();
-		});
-		
-		// načtení obsahu pop-upu
-		this.map.on('popupopen', function(e) {
-  			var marker = e.popup._source;
-  			
-  			url = "http://plzen.dopracenakole.net/popup/" + marker.popupId + "/";			
-  			
-			$.get(url, function(data) {
-				  console.log( "success" );
-				  console.log(data);
-				})
-				  .done(function() {
-				    console.log( "second success" );
-				  })
-				  .fail(function() {
-				    console.log( "error" );
-				  })
-				  .always(function() {
-				    console.log( "finished" );
-				  });
-  
 		});
 		
 	},
