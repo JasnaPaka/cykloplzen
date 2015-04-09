@@ -37,7 +37,7 @@ var cyclemap = {
 		for (i = 0; i < POIs.length; ++i) {
 			var icon = L.icon({iconUrl: POIs[i][3], iconSize: [20, 20]});
 			
-			var marker = L.marker([POIs[i][4], POIs[i][5]], {icon: icon});
+			var marker = L.marker([POIs[i][4], POIs[i][5]], {icon: icon, title: POIs[i][1]});
 			marker.addTo(this.map);
 			marker.zoom = POIs[i][2];
 			marker.category = POIs[i][0];
