@@ -133,6 +133,10 @@ a {
 	margin-left: 10px;
 }
 
-.addinfo {
+.addinfo, #comments-wrapper {
 	display:none;
+}
+
+.leaflet-popup-content hr {
+	display: none;
 }
