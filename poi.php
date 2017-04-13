@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL & ~E_NOTICE);
+
 class POIReader {
 
 	var $FEEDS = array(
@@ -26,17 +28,21 @@ class POIReader {
 			$xml = simplexml_load_file($value);
 			
 			$childs = $xml->Document->children();
+
+			$pois = "";
 			foreach ($childs as $child) {
 				$name = $child->name;
 				$minZoom = $child->minZoom;
 				$ikona = $child->ikona;
-				$coordinates = explode(",", $child->Point->coordinates);
+				$coordinates = explode(",", $child->MultiGeometry->Point->coordinates);
+
 				
 				if (strlen($pois) > 0) {
 					$pois.= ",";
 				}
 				
 				$pois.= "['".$feed."', '".$name."',".$minZoom.",'".$ikona."',".$coordinates[1].",".$coordinates[0].",".$child["id"]."]";
+				//echo "['".$feed."', '".$name."',".$minZoom.",'".$ikona."',".$coordinates[1].",".$coordinates[0].",".$child["id"]."]\n";
 			}
 			
 		}
