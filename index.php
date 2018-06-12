@@ -100,16 +100,10 @@
 
 </script>
 
-<?php
-	// Má se sidebar odstranit?
-	if (isset($_GET["closesidebar"])) {
-?>
-	<script type="text/javascript">
-		cyclemap.toggleSidebar();
-	</script>
-<?php
-	} 
-?>
+<script type="text/javascript">
+    cyclemap.toggleSidebar();
+</script>
+
 
 </body>
 </html>
