@@ -27,10 +27,6 @@
 </head>
 <body>
 
-<script type="text/javascript">
-	var POIs = <?php echo $poiReader->getPOIContent(); ?>;
-</script>
-
 <script src="js/map.js"></script>
 
 <button id="button-hide" title="Skryje postranní lištu" onclick="cyclemap.toggleSidebar()">&gt;</button>
@@ -47,18 +43,6 @@
 		
 		<p>Jedná se o komunitní projekt, do kterého se <a href="http://cyklomapainfo.plzne.cz/jak-se-zapojit/">
 		můžete zapojit i vy</a>!</p>
-		
-		<fieldset id="field-poi">
-<?php
-	$i = 0;
-	foreach($poiReader->getCategories() as $category) {
-		$i++;
-		
-		printf('<input type="checkbox" name="category" id="category%d" data-category="%s" checked="checked" onclick="cyclemap.categoryClick()" /><label class="field-category" for="category%d">%s</label><br />', 
-			$i, $category, $i, $category);	
-	}
-?>	
-		</fieldset>
 		
 		<p id="sidebar-menu">
 			<a href="#" style="display:none" id="menu-o-mape" onclick="cyclemap.toggleLegenda()">O mapě</a> 
@@ -98,13 +82,11 @@
 <script src="leaflet-plugins-1.2.1/control/Permalink.js"></script>
 <script src="leaflet-plugins-1.2.1/control/Permalink.Marker.js"></script>
 <script src="leaflet-plugins-1.2.1/control/Permalink.Layer.js"></script>
-<script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
-<script src="leaflet-plugins-1.2.1/layer/tile/Google.js"></script>	
 <script src="leaflet-plugins-1.2.1/layer/vector/KML.js"></script>
 
 
 <script type="text/javascript">
-	cyclemap.init(POIs);
+	cyclemap.init();
 </script>	
 
 <script>

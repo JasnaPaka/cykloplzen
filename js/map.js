@@ -20,88 +20,20 @@ var cyclemap = {
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 				'Dlaždice © <a href="http://opencyclemap.org/">OpenCycleMap.org</a>'
 		});
-		
-		var gglLayer = new L.Google();	
+
 		
 		L.control.scale({imperial: false, maxWidth: 250}).addTo(this.map);
 		
-		var layers = new L.Control.Layers({'Cyklomapa':pnkLayer, "OpenCycleMap":openCycleMapLayer, "Letecká Google": gglLayer});
+		var layers = new L.Control.Layers({'Cyklomapa':pnkLayer, "OpenCycleMap":openCycleMapLayer});
 		
 		this.map.addControl(layers);
 		this.map.addControl(new L.Control.Permalink({text: 'Trvalý odkaz', layers: layers}));
 		
-		// POIs
-		this.markers = [];
-		currentZoom = this.map.getZoom();
-		
-		for (i = 0; i < POIs.length; ++i) {
-			var icon = L.icon({iconUrl: POIs[i][3], iconSize: [20, 20]});
-			
-			var marker = L.marker([POIs[i][4], POIs[i][5]], {icon: icon, title: POIs[i][1]});
-			marker.addTo(this.map);
-			marker.zoom = POIs[i][2];
-			marker.category = POIs[i][0];
-			marker.popupId = POIs[i][6];
-			
-			if (marker.zoom > currentZoom) {
-				this.map.removeLayer(marker);
-			} 
-			
-			this.markers.push(marker);
-			
-			marker.on('click', function(e) {
-				url = "http://plzen.dopracenakole.net/popup/" + this.popupId + "/";			
-  			
-				var request = $.ajax({
-				  url: url,
-				  type: "GET",
-				  dataType: 'json'
-				});
-				
-				request.done(function(msg) {
-				
-				});
-				
-				request.fail(function(jqXHR, textStatus) {
-					var data = jqXHR.responseText;
-					data = data.replace("href=\"/", "href=\"http://plzen.dopracenakole.net/");	 
-					data = data.replace("src=\"/", "src=\"http://plzen.dopracenakole.net/");
-			
-					e.target.bindPopup(data);
-					e.target.openPopup();
-				});
-			}); 
-		}
-		
 		// zoom change
 		this.map.on('zoomend', function(event) {
-			cyclemap.changePOIs();
+
 		});
 		
-	},
-	
-	changePOIs: function() {
-		currentZoom = cyclemap.map.getZoom();
-		
-		categoriesElem = document.getElementsByName("category");
-
-	    for (i = 0; i < cyclemap.markers.length; ++i) {
-	    	zaskrtnuto = true;
-	    	
-	    	for (j = 0; j < categoriesElem.length; ++j) {
-	    		cat = categoriesElem[j].getAttribute("data-category");;
-	    		
-	    		if (cat == cyclemap.markers[i].category && !categoriesElem[j].checked) {
-	    			zaskrtnuto = false;
-	    		}
-	    	}
-	    
-	    	if (cyclemap.markers[i].zoom > currentZoom || !zaskrtnuto) {
-	    		cyclemap.map.removeLayer(cyclemap.markers[i]);
-			} else {
-				cyclemap.markers[i].addTo(cyclemap.map);
-			} 
-	    }	
 	},
 	
 	categoryClick: function() {
