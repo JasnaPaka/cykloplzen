@@ -78,7 +78,7 @@
 
 <div id="map"></div>
 
-<script src="leaflet-0.7.3/leaflet.js"></script>
+<script src="leaflet-1.9.4/leaflet.js"></script>
 <script src="leaflet-plugins-1.2.1/control/Permalink.js"></script>
 <script src="leaflet-plugins-1.2.1/control/Permalink.Marker.js"></script>
 <script src="leaflet-plugins-1.2.1/control/Permalink.Layer.js"></script>
