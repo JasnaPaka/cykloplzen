@@ -18,10 +18,10 @@
 	<link rel="stylesheet" media="(max-width: 500px)" href="style-500.css" />
 	
 	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
-	<link rel="stylesheet" type="text/css" href="leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="leaflet-1.9.4/leaflet.css" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	
-	<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+	<script type='text/javascript' src='js/jquery-3.7.1.min.js'></script>
 	
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
